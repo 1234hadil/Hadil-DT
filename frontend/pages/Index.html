@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 Hadil t'invite...</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- PAGE 1: L'invitation -->
+<div class="page active" id="page-invite">
+  <div class="card">
+    <span class="hero-emoji">🌹</span>
+    <h1>Est-ce que tu veux<br>sortir avec <em>moi?</em><br>na3rdek llbarouk ta3i takoul l7ilouuu </h1>
+    <p class="subtitle">— Hadil</p>
+
+    <div class="divider"><span>réponds</span></div>
+
+    <div class="btn-row">
+      <button class="btn btn-yes" onclick="acceptDate()">Oui 💗</button>
+      <button class="btn btn-no" id="noBtn"
+        onmouseover="dodgeNo(this)"
+        onclick="dodgeNo(this)">non... 🙈</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: Yay! -->
+<div class="page" id="page-yay">
+  <div class="card">
+    <span class="hero-emoji">🥹</span>
+    <h1>Tu as dit <em>oui</em>?!</h1>
+    <p class="subtitle">j'étais tellement préparée pour un refus 😅<br>Je plaisante, je sais que tu ne peux pas me refuser </p>
+
+    <div class="divider"><span>on continue</span></div>
+
+    <button class="btn btn-primary" onclick="goPage('page-date')">
+      c'est parti! →
+    </button>
+  </div>
+</div>
+
+<!-- PAGE 3: Choisir la date -->
+<div class="page" id="page-date">
+  <div class="card">
+    <span class="hero-emoji">📅</span>
+    <h1>Alors...<br><em>quand</em> tu es libre?</h1>
+    <p class="subtitle">choisis une date et une heure</p>
+
+    <div class="form-group">
+      <label>Jour</label>
+      <input type="date" id="dateInput" />
+    </div>
+    <div class="form-group">
+      <label>Heure</label>
+      <select id="timeInput">
+        <option value="">Sélectionne un créneau...</option>
+        <option>Matin ☀️ (10h - 12h)</option>
+        <option>Déjeuner 🥗 (12h - 14h)</option>
+        <option>Après-midi 🌤 (14h - 17h)</option>
+        <option>Soir 🌙 (17h - 20h)</option>
+        <option>Nuit 🌃 (20h+)</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" onclick="setDate()">confirmer la date →</button>
+  </div>
+</div>
+
+<!-- PAGE 4: Nourriture -->
+<div class="page" id="page-food">
+  <div class="card">
+    <span class="hero-emoji">🍽️</span>
+    <h1>Qu'est-ce qu'on<br><em>mange?</em></h1>
+    <p class="subtitle">dis-moi ce que tu as envie</p>
+
+    <div class="food-grid">
+      <div class="food-item" onclick="selectFood(this, 'Pizza')">
+        <span class="fe">🍕</span>Pizza
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'Sushi')">
+        <span class="fe">🍣</span>Sushi
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'Burgers')">
+        <span class="fe">🍔</span>Burgers
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'Pasta')">
+        <span class="fe">🍝</span>Pasta
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'Tacos')">
+        <span class="fe">🌮</span>Tacos
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'Ramen')">
+        <span class="fe">🍜</span>Ramen
+      </div>
+      <div class="food-item" onclick="selectFood(this, '7ilou')">
+        <span class="fe">🍰</span>7ilou
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'ice creaam')">
+        <span class="fe">🍦</span>ice creaam
+      </div>
+      <div class="food-item" onclick="selectFood(this, 'chocolat')">
+        <span class="fe">🍫</span>chocolat
+      </div>
+      
+    </div>
+
+    <button class="btn btn-primary" id="confirmBtn" onclick="confirm()">c'est noté! →</button>
+  </div>
+</div>
+
+<!-- PAGE 5: La lettre finale -->
+<div class="page" id="page-letter">
+  <div class="card">
+    <span class="hero-emoji">💌</span>
+    <h1>Je savais que tu<br>ne dirais pas <em>non.</em></h1>
+
+    <div class="divider"><span>détails</span></div>
+
+    <p class="letter-body">
+      Sois prêt(e) — je viens te chercher.<br>
+      <span id="letterDetails" style="font-size:1rem; color: var(--gold);"></span>
+    </p>
+
+    <div class="divider"><span>♥Hadil♥</span></div>
+    <p class="ps">P.S. les gens normaux envoient un message. moi j'ai fait un site web. pas de quoi.</p>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

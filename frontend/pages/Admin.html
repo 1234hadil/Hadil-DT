@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Dashboard Hadil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="admin-wrap">
+
+  <div class="admin-header">
+    <div>
+      <h1 class="admin-title">Dashboard 💗</h1>
+      <p style="font-size:0.82rem; color:var(--muted); margin-top:4px;">Réponses reçues pour l'invitation de Hadil</p>
+    </div>
+    <div style="display:flex; gap:0.75rem; align-items:center;">
+      <button class="btn-danger" onclick="loadDashboard()">↻ Actualiser</button>
+      <button class="btn-danger" onclick="deleteAll()">🗑 Tout effacer</button>
+      <a href="/" style="font-size:0.85rem; color:var(--wine); text-decoration:none; padding: 0.65rem 1rem; border:1.5px solid var(--blush); border-radius:12px;">
+        ← Voir le site
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num" id="statTotal">—</div>
+      <div class="stat-label">Total réponses</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:#5C1A2E;" id="statYes">—</div>
+      <div class="stat-label">💗 Oui</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:#9A6070;" id="statNo">—</div>
+      <div class="stat-label">😕 Non</div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div style="overflow-x:auto; border-radius:16px;">
+    <table class="response-table">
+      <thead>
+        <tr>
+          <th>Date réponse</th>
+          <th>Prénom</th>
+          <th>Réponse</th>
+          <th>Date choisie</th>
+          <th>Heure</th>
+          <th>Nourriture</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="responseBody">
+        <tr><td colspan="7" class="empty-state">Chargement...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
